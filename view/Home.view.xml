@@ -1,0 +1,80 @@
+<mvc:View xmlns="sap.m" 
+          xmlns:mvc="sap.ui.core.mvc" 
+          xmlns:core="sap.ui.core"
+          xmlns:f="sap.ui.layout.form"
+          xmlns:form="sap.ui.layout.form"
+          xmlns:l="sap.ui.layout"
+          xmlns:semantic="sap.f.semantic"
+          xmlns:msemantic="sap.m.semantic"
+          controllerName="com.hirose.mnp.lotmarkprint.ziemnplotmarkprint.controller.Home" 
+          displayBlock="true">
+          <f:SimpleForm id="SimpleFormChange354wideDual" 
+			layout="ResponsiveGridLayout"
+			labelSpanXL="4"
+			labelSpanL="3"
+			labelSpanM="4"
+			labelSpanS="12"
+			adjustLabelSpan="false"
+			emptySpanXL="0"
+			emptySpanL="4"
+			emptySpanM="0"
+			emptySpanS="0"
+			columnsXL="2"
+			columnsL="1"
+			columnsM="1"
+			singleContainerFullSize="false" >
+			<f:content>
+				<core:Title text=" " />
+        <form:SimpleForm editable="true">        
+        <Label text="Plant" labelFor="multiPlantInput" design="Bold" textAlign="End"/>
+        <MultiInput width="40%"
+			id="multiPlantInput" 
+			suggestionItems="{
+				path: '/I_PlantStdVH',
+				sorter: { path: 'Plant' }    
+			}"
+            valueHelpRequest="handlePlantValueHelp"
+            >
+			<core:Item key="{Plant}" text="{PlantName}" />
+		</MultiInput>
+        <Label text="Work Center Category" labelFor="multiWCCInput" design="Bold" textAlign="End"/>
+        <MultiInput width="40%"
+			id="multiWCCInput" 
+			suggestionItems="{
+				path: '/I_WorkCenterCategory',
+				sorter: { path: 'WorkCenterCategoryCode' }    
+			}"
+            valueHelpRequest="handleWCCValueHelp"
+            >
+			<core:Item key="{WorkCenterCategoryCode}" text="{WorkCenterCategoryCode_Text}" />
+		</MultiInput>
+        <Label text="Work Center Responsible" labelFor="multiWCRPInput" design="Bold" textAlign="End"/>
+        <MultiInput width="40%"
+			id="multiWCRPInput" 
+			suggestionItems="{
+				path: '/ZCDS_MNP_WorkCenterRespVH',
+				sorter: { path: 'WorkCenterResponsible' }    
+			}"
+            valueHelpRequest="handleWCRValueHelp"
+            >
+			<core:Item key="{WorkCenterResponsible}" text="{WorkCenterResponsibleName}" />
+		</MultiInput>
+        <Label text="Work Center" labelFor="multiWCInput" design="Bold" textAlign="End"/>
+        <MultiInput width="40%"
+			id="multiWCInput" 
+			suggestionItems="{
+				path: '/I_WorkCenterBySemanticKey',
+				sorter: { path: 'WorkCenter' }    
+			}"
+            valueHelpRequest="handleWCValueHelp">
+			<core:Item key="{WorkCenter}" text="{WorkCenter_Text}" />
+		</MultiInput>
+        
+        <Label text="Printer" labelFor="printer" design="Bold" textAlign="End"/>
+        <Input id="printer" value="{printer}"/>
+        </form:SimpleForm>           
+        </f:content>
+        </f:SimpleForm>
+        <ToggleButton icon= "sap-icon://download" text="Download" enabled="true" press="onDownload" />
+			<ToggleButton icon= "sap-icon://print" text="Print" enabled="true" pressed="true" press="onPrint" />    
+</mvc:View>

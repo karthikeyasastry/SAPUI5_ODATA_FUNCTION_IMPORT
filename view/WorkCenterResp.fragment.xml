@@ -1,0 +1,16 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<SelectDialog
+		id="valueWCRHelpDialog"
+		title="Work Center Responsible"
+		items="{/ZCDS_MNP_WorkCenterRespVH}"
+		search="_handleValueHelpSearch"
+		confirm="_handleWCRValueHelpClose"
+		cancel="_handleWCRValueHelpClose"
+		multiSelect="true">
+		<StandardListItem
+			title="{WorkCenterResponsible}"
+			description="{WorkCenterResponsibleName}" />
+	</SelectDialog>
+</core:FragmentDefinition>

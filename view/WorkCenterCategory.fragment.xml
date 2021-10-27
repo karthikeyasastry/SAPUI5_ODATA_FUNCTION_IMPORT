@@ -1,0 +1,16 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<SelectDialog
+		id="valueWCCHelpDialog"
+		title="Work Center Category"
+		items="{/I_WorkCenterCategory}"
+		search="_handleValueHelpSearch"
+		confirm="_handleWCCValueHelpClose"
+		cancel="_handleWCCValueHelpClose"
+		multiSelect="true">
+		<StandardListItem
+			title="{WorkCenterCategoryCode}"
+			description="{WorkCenterCategoryCode_Text}" />
+	</SelectDialog>
+</core:FragmentDefinition>

@@ -1,0 +1,16 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<SelectDialog
+		id="valueWCHelpDialog"
+		title="Work Centers"
+		items="{/I_WorkCenterBySemanticKey}"
+		search="_handleValueHelpSearch"
+		confirm="_handleWCValueHelpClose"
+		cancel="_handleWCValueHelpClose"
+		multiSelect="true">
+		<StandardListItem
+			title="{WorkCenter}"
+			description="{WorkCenter_Text}" />
+	</SelectDialog>
+</core:FragmentDefinition>
